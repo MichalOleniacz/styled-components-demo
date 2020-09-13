@@ -1,0 +1,26 @@
+:root {
+  /* --backgroundColor: #e8eaed; */
+  /* --textColor: #323233; */
+  --backgroundColor: rgba(170, 253, 253, 0.05);
+  --textColor: #40434e;
+  --black: #080705;
+  --detailLight: #912f40;
+  --detailDark: #702632;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+  color: var(--textColor);
+  text-decoration: none;
+  overflow-x: hidden;
+}
+
+@import "https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@600&family=Open+Sans:wght@300;400;600&display=swap";
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
