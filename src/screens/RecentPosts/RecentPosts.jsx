@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
-import styles from "./RecentPosts.module.css";
 import { Link } from "react-router-dom";
 import { getPosts } from "../../services/postService";
-import PostCard from "../../components/PostCard/PostCard";
+import PostCard from "../../components/PostCard";
 import PostImage from "../../assets/pictures/postCover.jpg";
+import styles from "./RecentPosts.module.css";
 
-const RecentPosts = () => {
+const RecentPosts = (props) => {
   const [isLoading, toggleLoading] = useState(true);
   const [data, setData] = useState();
-
   const fetchData = async () => {
     toggleLoading(true);
     const { data } = await getPosts();

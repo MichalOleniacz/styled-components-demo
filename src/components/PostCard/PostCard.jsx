@@ -1,7 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
-import PostCardContent from "../PostCardContent/PostCardContent";
-import ImageContainer from "../ImageContainer/ImageContainer";
+import PropTypes from "prop-types";
+import PostCardContent from "../PostCardContent";
+import ImageContainer from "../ImageContainer";
 
 const Wrapper = styled.div`
   ${({
@@ -45,29 +47,57 @@ const PostCard = ({
   image,
 }) => {
   return (
-    <Wrapper
-      heigth={height}
-      width={width}
-      flex={flex}
-      borderRadius={borderRadius}
-      borderColor={borderColor}
-      borderSize={borderSize}
-      boxShadow={boxShadow}>
-      <ImageContainer
-        image={image}
-        height={"300px"}
-        width={"100%"}
-        borderRadius={["40px", "40px", "0px", "0px"]}
-      />
-      <PostCardContent
-        title={title}
-        date={date}
-        width={"90%"}
-        height={"30%"}
-        flex={["column", "center", "space-between"]}
-      />
-    </Wrapper>
+    <Link to={`/${path}`}>
+      <Wrapper
+        heigth={height}
+        width={width}
+        flex={flex}
+        borderRadius={borderRadius}
+        borderColor={borderColor}
+        borderSize={borderSize}
+        boxShadow={boxShadow}>
+        <ImageContainer
+          image={image}
+          height={"300px"}
+          width={"100%"}
+          borderRadius={["40px", "40px", "0px", "0px"]}
+        />
+        <PostCardContent
+          title={title}
+          date={date}
+          width={"90%"}
+          height={"30%"}
+          flex={["column", "center", "space-between"]}
+        />
+      </Wrapper>
+    </Link>
   );
+};
+
+PostCard.propTypes = {
+  title: PropTypes.string,
+  date: PropTypes.string,
+  path: PropTypes.string,
+  height: PropTypes.string,
+  width: PropTypes.string,
+  flex: PropTypes.array,
+  borderRadius: PropTypes.string,
+  borderColor: PropTypes.string,
+  borderSize: PropTypes.string,
+  boxShadow: PropTypes.string,
+  image: PropTypes.string,
+};
+
+PostCard.defaultProps = {
+  title: "Title",
+  date: Date.now,
+  path: "/",
+  height: "100%",
+  width: "100%",
+  borderRadius: "0%",
+  borderColor: "#ffffff",
+  borderSize: "0px",
+  boxShadow: "none",
 };
 
 export default PostCard;

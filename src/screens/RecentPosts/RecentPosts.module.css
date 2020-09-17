@@ -7,9 +7,11 @@
   align-items: center;
   justify-content: center;
   background-color: var(--backgroundColor);
+  margin-bottom: 150px !important;
 }
 
 .title {
+  margin-top: 50px;
   font-family: "Hind Siliguri", sans-serif;
   margin-bottom: 50px;
   font-size: 28px;

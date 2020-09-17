@@ -1,6 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import TextComponent from "../TextComponent/TextComponent";
+import PropTypes from "prop-types";
+import TextComponent from "../TextComponent";
 
 const Wrapper = styled.div`
   ${({ height, width, flex }) => css`
@@ -24,7 +25,7 @@ const PostCardContent = ({ title, date, width, height, flex }) => {
     <Wrapper heigth={height} width={width} flex={flex}>
       <TextComponent
         content={title}
-        fontSize={"16px"}
+        fontSize={"18px"}
         color={"var(--textColor)"}
         fontWeight={"600"}
       />
@@ -36,6 +37,21 @@ const PostCardContent = ({ title, date, width, height, flex }) => {
       />
     </Wrapper>
   );
+};
+
+PostCardContent.propTypes = {
+  title: PropTypes.string,
+  date: PropTypes.string,
+  width: PropTypes.string,
+  height: PropTypes.string,
+  flex: PropTypes.array,
+};
+
+PostCardContent.defaultProps = {
+  title: "Title",
+  date: Date.now,
+  width: "100%",
+  height: "100%",
 };
 
 export default PostCardContent;

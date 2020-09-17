@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
+import PropTypes from "prop-types";
 
 const getBorderRadius = (value) => {
   if (value.length === 4)
@@ -31,6 +32,19 @@ const ImageContainer = ({ image, height, width, borderRadius }) => {
       borderRadius={borderRadius}
     />
   );
+};
+
+ImageContainer.propTypes = {
+  image: PropTypes.string,
+  height: PropTypes.string,
+  width: PropTypes.string,
+  borderRadius: PropTypes.string,
+};
+
+ImageContainer.defaultProps = {
+  height: "100%",
+  width: "100%,",
+  borderRadius: "0%",
 };
 
 export default ImageContainer;
