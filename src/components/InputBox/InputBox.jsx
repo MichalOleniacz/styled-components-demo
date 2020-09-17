@@ -95,7 +95,6 @@ InputBox.propTypes = {
 };
 
 InputBox.defaultProps = {
-  content: "",
   type: "text",
   placeholder: "User input",
   height: "100%",

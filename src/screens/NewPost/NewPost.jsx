@@ -66,7 +66,7 @@ const NewPost = ({ history }) => {
         />
         <Button
           value={"Submit"}
-          onClick={handleSubmit}
+          handleClick={handleSubmit}
           height={"8%"}
           width={"100%"}
           bgColor={"var(--black)"}

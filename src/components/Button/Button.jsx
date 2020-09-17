@@ -21,7 +21,7 @@ const StyledButton = styled.button`
 
 const Button = ({
   value,
-  onClick,
+  handleClick,
   width,
   height,
   bgColor,
@@ -32,7 +32,7 @@ const Button = ({
 }) => {
   return (
     <StyledButton
-      onClick={onClick}
+      onClick={handleClick}
       width={width}
       height={height}
       bgColor={bgColor}
